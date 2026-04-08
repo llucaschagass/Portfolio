@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #10b981;
+  --color-bg-dark: #070707;
+  --color-text-main: #f3f4f6;
+}
+
+:root {
+  --primary: #10b981;
+  --primary-glow: rgba(16, 185, 129, 0.3);
+  --bg-dark: #070707;
+  --bg-card: #111111;
+  --bg-card-hover: #161616;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border: rgba(255, 255, 255, 0.1);
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-hover: rgba(255, 255, 255, 0.06);
+}
+
+body {
+  @apply bg-bg-dark text-text-main antialiased overflow-x-hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+section {
+  @apply py-20 px-5 max-w-[1200px] mx-auto;
+}
+
+.glass-card {
+  @apply bg-[var(--glass)] backdrop-blur-[10px] border border-[var(--border)] rounded-[16px] p-6 transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply bg-[var(--glass-hover)] border-primary -translate-y-[5px];
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-white to-primary;
+}
+
+.btn-primary {
+  @apply flex items-center gap-2 bg-primary text-black px-6 py-3 rounded-full font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)];
+}
+
+.btn-outline {
+  @apply flex items-center gap-2 bg-transparent text-white px-6 py-3 rounded-full font-bold border border-[var(--border)] transition-all duration-300 cursor-pointer hover:border-primary hover:bg-[var(--glass)];
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#222] rounded-full hover:bg-primary;
+}
