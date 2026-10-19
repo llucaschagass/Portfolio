@@ -23,19 +23,22 @@ const Skills = () => {
             transition={{ delay: index * 0.05 }}
             className="w-full"
           >
-            <div className="flex justify-between items-end mb-3">
+            <div className="flex justify-between items-end mb-3 gap-4">
               <span className="text-lg font-semibold text-white">{skill.name}</span>
-              <span className="text-sm font-medium text-primary">{skill.level}</span>
+              <span className="text-sm font-medium text-primary shrink-0">{skill.level}/5</span>
             </div>
-            <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${skill.percentage}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2 }}
-                className="h-full"
-                style={{ backgroundColor: 'var(--primary)' }}
-              />
+            <div className="grid grid-cols-5 gap-1.5">
+              {[1, 2, 3, 4, 5].map((step) => (
+                <motion.div
+                  key={step}
+                  initial={{ opacity: 0.2 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 + step * 0.1 }}
+                  className="h-3 rounded-full border border-white/5"
+                  style={{ backgroundColor: step <= skill.level ? 'var(--primary)' : 'rgba(255,255,255,0.05)' }}
+                />
+              ))}
             </div>
           </motion.div>
         ))}

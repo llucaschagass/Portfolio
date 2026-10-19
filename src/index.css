@@ -3,14 +3,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #10b981;
+  --color-primary: #D97757;
   --color-bg-dark: #070707;
   --color-text-main: #f3f4f6;
 }
 
 :root {
-  --primary: #10b981;
-  --primary-glow: rgba(16, 185, 129, 0.3);
+  --primary: #D97757;
+  --primary-glow: rgba(217, 119, 87, 0.3);
   --bg-dark: #070707;
   --bg-card: #111111;
   --bg-card-hover: #161616;
@@ -47,7 +47,7 @@ section {
 }
 
 .btn-primary {
-  @apply flex items-center gap-2 bg-primary text-black px-6 py-3 rounded-full font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)];
+  @apply flex items-center gap-2 bg-primary text-black px-6 py-3 rounded-full font-bold transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_20px_rgba(217,119,87,0.3)];
 }
 
 .btn-outline {
