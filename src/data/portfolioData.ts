@@ -25,14 +25,16 @@ export const portfolioData = {
     { label: "Tecnologias estudadas", value: "5+" }
   ],
   skills: [
-    { name: "Angular", level: 4 },
-    { name: "React", level: 4 },
-    { name: "Flutter", level: 3 },
-    { name: "Node.js", level: 4 },
-    { name: "Java", level: 4 },
-    { name: ".NET", level: 3 },
-    { name: "Python", level: 3 },
-    { name: "Bancos relacionais e não relacionais", level: 4 }
+    { name: "Angular", icon: "angular" },
+    { name: "React", icon: "react" },
+    { name: "Flutter", icon: "flutter" },
+    { name: "Node.js", icon: "nodejs" },
+    { name: "Java", icon: "java" },
+    { name: ".NET", icon: "dotnetcore" },
+    { name: "Python", icon: "python" },
+    { name: "MySQL", icon: "mysql" },
+    { name: "PostgreSQL", icon: "postgresql" },
+    { name: "MongoDB", icon: "mongodb" }
   ],
   experience: [
     {

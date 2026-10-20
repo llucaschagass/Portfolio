@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 
+const iconUrl = (icon: string) => {
+  const variant = icon === "react" || icon === "mysql" ? "original" : "plain";
+  return `https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/${icon}/${icon}-${variant}.svg`;
+};
+
 const Skills = () => {
   return (
     <section id="skills" className="py-20">
@@ -13,7 +18,7 @@ const Skills = () => {
         <span className="text-primary">02.</span> Habilidades
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
         {portfolioData.skills.map((skill, index) => (
           <motion.div
             key={skill.name}
@@ -21,25 +26,23 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05 }}
-            className="w-full"
+            className="glass-card flex flex-col items-center gap-4 py-8"
           >
-            <div className="flex justify-between items-end mb-3 gap-4">
-              <span className="text-lg font-semibold text-white">{skill.name}</span>
-              <span className="text-sm font-medium text-primary shrink-0">{skill.level}/5</span>
-            </div>
-            <div className="grid grid-cols-5 gap-1.5">
-              {[1, 2, 3, 4, 5].map((step) => (
-                <motion.div
-                  key={step}
-                  initial={{ opacity: 0.2 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.2 + step * 0.1 }}
-                  className="h-3 rounded-full border border-white/5"
-                  style={{ backgroundColor: step <= skill.level ? 'var(--primary)' : 'rgba(255,255,255,0.05)' }}
-                />
-              ))}
-            </div>
+            <span
+              aria-hidden="true"
+              className="w-12 h-12 bg-primary"
+              style={{
+                maskImage: `url(${iconUrl(skill.icon)})`,
+                WebkitMaskImage: `url(${iconUrl(skill.icon)})`,
+                maskSize: "contain",
+                WebkitMaskSize: "contain",
+                maskRepeat: "no-repeat",
+                WebkitMaskRepeat: "no-repeat",
+                maskPosition: "center",
+                WebkitMaskPosition: "center"
+              }}
+            />
+            <span className="text-base font-semibold text-white">{skill.name}</span>
           </motion.div>
         ))}
       </div>
