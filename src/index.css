@@ -35,7 +35,7 @@ section {
 }
 
 .glass-card {
-  @apply bg-[var(--glass)] backdrop-blur-[10px] border border-[var(--border)] rounded-[16px] p-6 transition-all duration-300;
+  @apply bg-[var(--glass)] border border-[var(--border)] rounded-[16px] p-6 transition-[background-color,border-color,transform] duration-300;
 }
 
 .glass-card:hover {
@@ -65,4 +65,16 @@ section {
 
 ::-webkit-scrollbar-thumb {
   @apply bg-[#222] rounded-full hover:bg-primary;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Evita hover "grudado" e saltos em telas de toque */
+@media (hover: none) {
+  .glass-card:hover {
+    @apply translate-y-0;
+  }
 }

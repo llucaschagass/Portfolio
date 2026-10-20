@@ -11,7 +11,8 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -24,7 +25,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/10 py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 py-4 transition-colors duration-300 border-b ${scrolled ? 'bg-black/90 border-white/10' : 'bg-transparent border-transparent'}`}>
       <div className="max-width-1200 mx-auto px-6 flex justify-between items-center" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <motion.a 
           href="#home"

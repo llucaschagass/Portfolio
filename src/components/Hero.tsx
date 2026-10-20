@@ -5,7 +5,7 @@ import { portfolioData } from '../data/portfolioData';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center relative pt-20">
+    <section id="home" className="min-h-[100svh] flex flex-col justify-center items-center text-center relative pt-20">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
